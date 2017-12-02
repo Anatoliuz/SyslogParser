@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Events>
+    <event>
+    <System>
+         <Provider Name="Microsoft-Windows-Diagnostics-Performance" Guid="{cfc18ec0-96b1-4eba-961b-622caee05b0a}" />
+         <EventID>400</EventID>
+         <Version>1</Version>
+         <Level>2</Level>
+         <Task>4005</Task>
+         <Opcode>37</Opcode>
+        <Keywords>0x8000000000010000</Keywords>
+    <TimeCreated SystemTime="2007-09-01T12:58:15.638Z" />
+    <EventRecordID>196</EventRecordID>
+    <Correlation ActivityID="{00000000-E0C8-0000-BD2A-11C594ECC701}" />
+    <Execution ProcessID="1856" ThreadID="3192" />
+    <Channel>Microsoft-Windows-Diagnostics-Performance/Operational</Channel>
+    <Computer>DAYPressureW-PC</Computer>
+    <Security UserID="S-1-5-19" />
+   </System>
+    </event>
+</Events>

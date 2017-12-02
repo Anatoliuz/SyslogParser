@@ -1,0 +1,22 @@
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Service Control Manager" Guid="{555908D1-A6D7-4695-8E1E-26931D2012F4}" EventSourceName="Service Control Manager" />
+    <EventID Qualifiers="16384">7036</EventID>
+    <Version>0</Version>
+    <Level>4</Level>
+    <Task>0</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x80000000000000</Keywords>
+    <TimeCreated SystemTime="2008-03-23T11:06:49.000Z" />
+    <EventRecordID>1142</EventRecordID>
+    <Correlation />
+    <Execution ProcessID="0" ThreadID="0" />
+    <Channel>System</Channel>
+    <Computer>RGL-W2K8</Computer>
+    <Security />
+  </System>
+  <EventData>
+    <Data Name="param1">Windows Time</Data>
+    <Data Name="param2">running</Data>
+  </EventData>
+</Event>
