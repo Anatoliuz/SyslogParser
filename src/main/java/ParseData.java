@@ -12,7 +12,7 @@ public class ParseData {
         String text = getData();
         SyslogParser syslogParser = new SyslogParser(text);
         syslogParser.parseWindowsEvent();
-      //  syslogParser.printData();
+       syslogParser.printData();
 
     }
     private  static String getData()throws ParserConfigurationException, SAXException,
