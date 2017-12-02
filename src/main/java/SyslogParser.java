@@ -6,7 +6,8 @@ import java.io.*;
 import java.util.HashMap;
 
 import java.util.Map;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 //Parse Win Event(not events!) from syslog formatted string by one
@@ -16,7 +17,7 @@ public class SyslogParser{
 
 
     private   String makeDataCleanUp(String data){
-        //data = removeUnnecessaryData( data);
+        data = removeUnnecessaryData( data);
         data = removeUnlogic( data);
         return data;
     }
@@ -53,9 +54,21 @@ public class SyslogParser{
     public  void parseWindowsEvent() throws  SAXException,
             IOException, IllegalArgumentException{
         String eventLogWithoutErrors = makeDataCleanUp(eventFromSyslog);
-        System.out.println(eventLogWithoutErrors);
+        System.out.println("");
+        Matcher m = Pattern.compile("(^.*?[a-zA-Z]{3,}\\s\\d{2,}\\s\\d{2,}:\\d{2,}:\\d{2,}\\s)", Pattern.CASE_INSENSITIVE).matcher(eventLogWithoutErrors);
+        while (m.find()) {
+            eventLogWithoutErrors = eventLogWithoutErrors.replaceAll(m.group(1).toString(), "");
+
+        }
+
+        Matcher m2 = Pattern.compile("(^.*?\\d+\\.\\d+\\.\\d+\\.\\d+\\s)", Pattern.CASE_INSENSITIVE).matcher(eventLogWithoutErrors);
+        while (m2.find()) {
+            eventLogWithoutErrors = eventLogWithoutErrors.replaceAll(m2.group(1).toString(), "");
+
+        }
 
         String[] pairs = eventLogWithoutErrors.split("\\s{3,}");
+
 
         logMap = getLogMap(pairs);
     }
